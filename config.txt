@@ -1,0 +1,41 @@
+cd /home/pi/fbcp-ili9341/
+
+sudo pkill fbcp
+
+sudo rm -rf build
+
+mkdir build
+
+cd build
+
+cmake -DWAVESHARE_ST7735S_HAT=ON -DGPIO_TFT_DATA_CONTROL=17 -DGPIO_TFT_RESET_PIN=22 -DSTATISTICS=1 -DSPI_BUS_CLOCK_DIVISOR=14 -DUSE_DMA_TRANSFERS=OFF -DDISPLAY_ROTATE_180_DEGREES=ON ..
+
+make -j
+
+sudo pkill fbcp
+
+sudo ./fbcp-ili9341
+
+Yakareados 
+
+///////////////////////////////////////////////////////////////////////////////////
+
+cd /home/pi/fbcp-ili9341/
+
+sudo pkill fbcp
+
+sudo rm -rf build
+
+mkdir build
+
+cd build
+
+cmake -DST7789=ON -DGPIO_TFT_DATA_CONTROL=17 -DGPIO_TFT_RESET_PIN=22 -DSTATISTICS=1 -DSPI_BUS_CLOCK_DIVISOR=12 -DUSE_DMA_TRANSFERS=OFF -DDISPLAY_BREAK_ASPECT_RATIO_WHEN_SCALING=ON  ..
+
+make -j
+
+sudo pkill fbcp
+
+sudo ./fbcp-ili9341
+
+Yakareados 
